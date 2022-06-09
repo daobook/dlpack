@@ -27,7 +27,7 @@ def _array_interface_from_dl_tensor(dlt):
                 cumulative *= shape[e]
             strides.append(cumulative * itemsize)
         strides = tuple(strides)
-    typestr = "|" + str(dlt.dtype.type_code)[0] + str(itemsize)
+    typestr = f"|{str(dlt.dtype.type_code)[0]}{str(itemsize)}"
     return dict(
         version=3,
         shape=shape,

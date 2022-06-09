@@ -90,9 +90,8 @@ def from_numpy(np_array: np.ndarray):
     dl_managed_tensor.dl_tensor.byte_offset = 0
     dl_managed_tensor.manager_ctx = holder._as_manager_ctx()
     dl_managed_tensor.deleter = _numpy_array_deleter
-    pycapsule = ctypes.pythonapi.PyCapsule_New(
+    return ctypes.pythonapi.PyCapsule_New(
         ctypes.byref(dl_managed_tensor),
         _c_str_dltensor,
         _numpy_pycapsule_deleter,
     )
-    return pycapsule

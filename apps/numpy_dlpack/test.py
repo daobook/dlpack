@@ -29,8 +29,8 @@ if __name__ == "__main__":
     sure the conversions and memory management are stable.
     """
     print("### Testing from_numpy")
-    for i in range(10000):
+    for _ in range(10000):
         test_from_numpy()
     print("### Testing to_numpy")
-    for i in range(10000):
+    for _ in range(10000):
         test_to_numpy()

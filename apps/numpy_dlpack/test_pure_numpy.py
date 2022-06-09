@@ -31,8 +31,8 @@ if __name__ == "__main__":
     sure the conversions and memory management are stable.
     """
     print("### Running `test_to_from_numpy_zero_copy`")
-    for i in range(10000):
+    for _ in range(10000):
         test_to_from_numpy_zero_copy()
     print("### Running `test_to_from_numpy_memory`")
-    for i in range(10000):
+    for _ in range(10000):
         test_to_from_numpy_memory()
